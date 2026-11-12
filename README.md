@@ -85,7 +85,7 @@ All of them are configured in `backend/.env`. The app works without them.
 
 | Variable | Effect |
 | --- | --- |
-| `STRIPE_SECRET_KEY`, `STRIPE_WEBHOOK_SECRET` | Real card payments with Stripe Checkout (use test keys). Forward webhooks locally with `stripe listen --forward-to localhost:5000/api/webhooks/stripe`. |
+| `STRIPE_SECRET_KEY`, `STRIPE_WEBHOOK_SECRET` | Real card payments with Stripe Checkout (use test keys). Forward webhooks locally with `stripe listen --events checkout.session.completed,checkout.session.expired --forward-to localhost:5000/api/webhooks/stripe`. |
 | `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET` | Shows the "Continue with Google" button. Authorized redirect URI: `http://localhost:5000/api/auth/google/callback`. |
 | `SMTP_*` | Sends real emails instead of logging them. |
 
