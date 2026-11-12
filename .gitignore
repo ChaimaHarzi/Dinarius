@@ -1,0 +1,19 @@
+# Dependencies and builds
+node_modules/
+dist/
+.angular/
+coverage/
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Runtime data
+backend/uploads/
+*.log
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.idea/

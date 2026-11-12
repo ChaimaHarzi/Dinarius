@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+
+  --color-brand-50: #ecfdf3;
+  --color-brand-100: #d1fadf;
+  --color-brand-200: #a6f4c5;
+  --color-brand-300: #6ce9a6;
+  --color-brand-400: #32d583;
+  --color-brand-500: #12b76a;
+  --color-brand-600: #039855;
+  --color-brand-700: #027a48;
+  --color-brand-800: #05603a;
+  --color-brand-900: #054f31;
+
+  --color-ink: #10231a;
+  --color-sand: #faf8f4;
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+  }
+  body {
+    @apply bg-sand text-stone-800;
+  }
+  h1, h2, h3, h4 {
+    @apply text-ink;
+  }
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-brand-500;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex cursor-pointer items-center justify-center gap-2 rounded-lg px-4 py-2.5 text-sm font-semibold whitespace-nowrap transition disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .btn-primary {
+    @apply bg-brand-600 text-white shadow-sm hover:bg-brand-700;
+  }
+  .btn-secondary {
+    @apply border border-stone-300 bg-white text-stone-700 hover:bg-stone-50;
+  }
+  .btn-danger {
+    @apply bg-red-600 text-white hover:bg-red-700;
+  }
+  .btn-ghost {
+    @apply text-stone-600 hover:bg-stone-100;
+  }
+  .btn-sm {
+    @apply px-3 py-1.5 text-xs;
+  }
+
+  .label {
+    @apply mb-1.5 block text-sm font-medium text-stone-700;
+  }
+  .input {
+    @apply block w-full rounded-lg border border-stone-300 bg-white px-3.5 py-2.5 text-sm text-stone-900 placeholder:text-stone-400 focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 focus:outline-none disabled:bg-stone-100;
+  }
+  .input.ng-invalid.ng-touched {
+    @apply border-red-400 focus:border-red-500 focus:ring-red-500/20;
+  }
+  .field-error {
+    @apply mt-1 text-xs text-red-600;
+  }
+
+  .card {
+    @apply rounded-2xl border border-stone-200/80 bg-white shadow-sm;
+  }
+
+  .table-wrap {
+    @apply overflow-x-auto;
+  }
+  .table {
+    @apply w-full text-left text-sm;
+  }
+  .table th {
+    @apply border-b border-stone-200 px-4 py-3 text-xs font-semibold tracking-wide text-stone-500 uppercase;
+  }
+  .table td {
+    @apply border-b border-stone-100 px-4 py-3 align-middle;
+  }
+}
